@@ -1,0 +1,50 @@
+.gen {
+  text-align: center;
+  border: solid grey;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.genElement {
+  padding: 8px;
+  display: inline-block;
+}
+.genButton {
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  border: none;
+}
+.elementMainMenu {
+  text-align: center;
+}
+.menu {
+  text-align: left;
+  border: solid black;
+  width: 128px;
+}
+.elementSub {
+  display: inline-block;
+  padding: 8px;
+}
+#elementsList {
+  vertical-align: top;
+  display: inline-block;
+  background-color: black;
+  color: grey;
+  height: 100%;
+}
+#elementMenus {
+  vertical-align: top;
+  display: inline-block;
+  width: 1000px !important;
+}
+#HgenT2 {
+  display: none;
+}
+ul {
+  list-style-type: none;
+}
+body {
+  font-family: sans-serif;
+}
