@@ -63,6 +63,7 @@ function buyGen(elm, tier) {
     }
   }
 }
+
 function save() {
   let items = [];
   items.push(hydrogen);
@@ -78,4 +79,7 @@ function save() {
   items.map(x => btoa(x));
   items.join("");
   return items[0];
+}
+function newGen(tier, elm, cost) {
+  
 }
