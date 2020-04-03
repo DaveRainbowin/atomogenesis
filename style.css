@@ -20,7 +20,7 @@
 }
 .menu {
   text-align: left;
-  border: solid black;
+  border: solid rgb(161, 161, 161);
   width: 128px;
 }
 .elementSub {
@@ -30,8 +30,7 @@
 #elementsList {
   vertical-align: top;
   display: inline-block;
-  background-color: black;
-  color: grey;
+  background-color: rgb(161, 161, 161);
   height: 100%;
 }
 #elementMenus {
