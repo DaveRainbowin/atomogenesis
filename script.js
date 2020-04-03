@@ -1,5 +1,6 @@
-var hydrogen = 15;
+var h1 = 15;
 var h2 = 0;
+var h3 = 0;
 var totalH = 15;
 var hGen1 = 0;
 var hGenCost = 15;
@@ -10,7 +11,11 @@ var h2Unlock = false;
 var h3Unlock = false;
 var chance = Math.random();
 var hGenSecond = setInterval(hGenPlus, 1000);
-var check = setInterval (check, 10);
+var check = setInterval(check, 10);
+var randomizer = setInterval(randomize, 10);
+function randomize() {
+  chance = Math.random();
+}
 function check() {
   if (hGen1 > 0) {
     getTag("HgenT2").style.display = "block";
@@ -19,20 +24,21 @@ function check() {
 function addH(x) {
   for (y = 0; y < x; y++) {
     if (h2Unlock == false) {
-      hydrogen++;
+      h1++;
       totalH++;
     } else if (h2Unlock == true) {
       if (chance < 0.999884) {
-        hydrogen++;
+        h1++;
         totalH++;
       } else if (chance <= 1) {
         h2++;
+        totalH++;
       }
     }
   }  
 }
 function update() {
-  getTag("hydrogenNum").innerHTML = hydrogen;
+  getTag("hydrogenNum").innerHTML = h1;
 }
 function hGenPlus() {
   addH(hPerSecond);
@@ -40,8 +46,8 @@ function hGenPlus() {
 }
 function buyGen(elm, tier) {
   if (elm == "h") {
-    if (tier == "1" && hydrogen >= hGenCost) {
-      hydrogen = hydrogen - hGenCost;
+    if (tier == "1" && h1 >= hGenCost) {
+      h1 -= hGenCost;
       hGen1++;
       hPerSecond++;
       hGenCost = Math.round((hGenCost * 2 + 10) / 1.5);
@@ -50,8 +56,8 @@ function buyGen(elm, tier) {
       getTag("hGenCost").innerHTML = hGenCost + " H";
       getTag("hGenTotal").innerHTML = "Total: " + hGen1 + " H/s";
       update();
-    } else if (tier == 2 && hydrogen >= hGen2Cost) {
-      hydrogen -= hGen2Cost;
+    } else if (tier == 2 && h1 >= hGen2Cost) {
+      h1 -= hGen2Cost;
       hGen2Cost = Math.round((hGen2Cost * 3) / 1.7 + 10);
       hGen2 += x;
       hPerSecond += x * 3;
