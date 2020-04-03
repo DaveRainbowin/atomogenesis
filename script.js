@@ -12,10 +12,6 @@ var h3Unlock = false;
 var chance = Math.random();
 var hGenSecond = setInterval(hGenPlus, 1000);
 var check = setInterval(check, 10);
-var randomizer = setInterval(randomize, 10);
-function randomize() {
-  chance = Math.random();
-}
 function check() {
   if (hGen1 > 0) {
     getTag("HgenT2").style.display = "block";
@@ -35,7 +31,8 @@ function addH(x) {
         totalH++;
       }
     }
-  }  
+  chance = Math.random();
+  }
 }
 function update() {
   getTag("hydrogenNum").innerHTML = h1;
