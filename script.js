@@ -3,8 +3,8 @@ var h2 = 0;
 var totalH = 15;
 var hGen1 = 0;
 var hGenCost = 15;
-var hGenIICost = 100;
-var hGenII = 0;
+var hGen2Cost = 100;
+var hGen2 = 0;
 var hPerSecond = 0;
 var h2Unlock = false;
 var h3Unlock = false;
@@ -50,15 +50,15 @@ function buyGen(elm, tier) {
       getTag("hGenCost").innerHTML = hGenCost + " H";
       getTag("hGenTotal").innerHTML = "Total: " + hGen1 + " H/s";
       update();
-    } else if (tier == 2 && hydrogen >= hGenIICost) {
-      hydrogen -= hGenIICost;
-      hGenIICost = Math.round((hGenIICost * 3) / 1.7 + 10);
-      hGenII += x;
+    } else if (tier == 2 && hydrogen >= hGen2Cost) {
+      hydrogen -= hGen2Cost;
+      hGen2Cost = Math.round((hGen2Cost * 3) / 1.7 + 10);
+      hGen2 += x;
       hPerSecond += x * 3;
       getTag("HperSecond").innerHTML = hPerSecond + " H/s";
-      getTag("hGenIINum").innerHTML = hGenII;
-      getTag("hGenIICost").innerHTML = hGenIICost + " H";
-      getTag("hGenIITotal").innerHTML = "Total: " + hGenII * 3 + " H/s";
+      getTag("hGen2Num").innerHTML = hGen2;
+      getTag("hGen2Cost").innerHTML = hGen2Cost + " H";
+      getTag("hGen2Total").innerHTML = "Total: " + hGen2 * 3 + " H/s";
       update();
     }
   }
